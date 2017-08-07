@@ -11,8 +11,6 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
         https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-echo $(hostname) > /etc/nodename
-echo "$(hostname -i) $(hostname)" >> /etc/hosts
 yum -y update
 yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -29,4 +27,6 @@ setenforce 0
 yum install -y kubelet kubeadm
 systemctl enable kubelet && systemctl start kubelet
 
+echo $(hostname) > /etc/nodename
+echo "$(hostname -i) $(hostname)" >> /etc/hosts
 shutdown -r now
