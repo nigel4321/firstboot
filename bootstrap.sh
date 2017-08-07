@@ -15,7 +15,7 @@ echo $(hostname) > /etc/nodename
 echo "$(hostname -i) $(hostname)" >> /etc/hosts
 yum -y update
 yum install -y yum-utils device-mapper-persistent-data lvm2
-# yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum -y install epel-release
 yum -y install python-pip
 yum -y install docker
@@ -29,3 +29,4 @@ setenforce 0
 yum install -y kubelet kubeadm
 systemctl enable kubelet && systemctl start kubelet
 
+shutdown -r now
