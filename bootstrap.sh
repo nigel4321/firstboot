@@ -17,6 +17,7 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 yum -y install epel-release
 yum -y install python-pip
 yum -y install docker
+yum -y install bind-utils
 
 pip install --upgrade pip
 
