@@ -1,2 +1,2 @@
 
-apt-get upgrade
+echo date > /tmp/run.boot
