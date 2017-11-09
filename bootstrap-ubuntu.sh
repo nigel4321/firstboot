@@ -31,4 +31,5 @@ apt-get update
 waitforapt
 apt-get install -y kubelet kubeadm
 
+######## Must be last line  ###########
 apt-get install -y ansible
